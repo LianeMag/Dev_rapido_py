@@ -1,4 +1,4 @@
-#
+#Redimensionando Frames
 
 import tkinter 
 janela = tkinter.Tk()
