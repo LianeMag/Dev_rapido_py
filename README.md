@@ -1,2 +1,2 @@
 # Dev_rapido_py
- Exemplos trabalhados na aula da Faculdade sobre Frameworks em Python.
+Trabalhos e exemplos da disciplina Desenvolvimento Rápido de Aplicações em Python
