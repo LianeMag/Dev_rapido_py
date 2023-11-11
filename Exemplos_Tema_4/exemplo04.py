@@ -1,9 +1,9 @@
 #Redimensionando Frames
 
-import tkinter 
-janela = tkinter.Tk()
+import tkinter as tk
+janela = tk.Tk()
 janela.title("Trabalhando GUI em Python")
-botao = tkinter.Button(janela,text="Botão da tela")
+botao = tk.Button(janela,text="Botão da tela")
 botao.pack()
 janela.resizable(True, True)
 janela.mainloop()
