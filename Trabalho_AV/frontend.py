@@ -1,4 +1,4 @@
-# Importando arquivos necessários
+# Importando bibliotecas necessárias
 
 from tkinter import *
 from tkinter import ttk
