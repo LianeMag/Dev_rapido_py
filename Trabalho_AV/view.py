@@ -2,12 +2,11 @@
 
 import sqlite3 as lite
 
-# Criando conexao 
+# Criando conexao com o BD
 
 con=lite.connect('Lojinha_Moonli.db')
 
-# Inserindo dados 
-
+# Função Inserir dados 
 
 def inserir_info(i):
 
@@ -16,7 +15,7 @@ def inserir_info(i):
        query = "INSERT INTO Produtos (sku, nome, marca, preco, precodez, quantidade, garantia) VALUES (?, ?, ?, ?, ?, ?, ?)"
        cur.execute(query, i)
 
-# Acessando os dados 
+# Função Acessar os dados 
 
 def mostrar_dados():
     lista = []
@@ -31,7 +30,7 @@ def mostrar_dados():
 
     return lista
 
-# Atualizando os dados 
+# Função Atualizar dados 
 
 def atualizar_info(i):
 
@@ -40,7 +39,7 @@ def atualizar_info(i):
        query = "UPDATE Produtos SET nome=?, marca=?, preco=?, precodez=?, quantidade=?, garantia=? WHERE sku=?"
        cur.execute(query, i)
 
-# Deletando dados
+# Função Deletar dados
 
 def excluir_info(i):
 

@@ -1,20 +1,19 @@
-# Importando Tkinter
+# Importando arquivos necessários
 
 from tkinter import *
-from tkinter import font
 from tkinter import ttk
 from view import *
 from tkinter import messagebox
 
-# iniciando a janela 
+# iniciando a janela.
 
 janela=Tk()
 janela.title('Cadastro')
-janela.geometry("1320x520")
+janela.geometry("1295x520")
 janela.configure(background='#FFE282')
 janela.resizable(width= FALSE, height= FALSE)
 
-# Dividindo a Janela 
+# Dividindo a Janela em partes.
 
 frame_esquerda=Frame(janela, width=565, height=550, bg='#FFE282')
 frame_esquerda.grid(row=0, column=0, padx=0, pady=1, sticky=NSEW)
@@ -23,7 +22,7 @@ frame_esquerda.grid(row=0, column=0, padx=0, pady=1, sticky=NSEW)
 frame_direita=Frame (janela, width=800, height=550)
 frame_direita.grid(row=0, column=1, rowspan=2, padx=1, pady=0, sticky=NSEW)
 
-# Nome do Banco de Dados
+# Frase com nome do Banco de dados.
 
 lblappnome=Label(frame_esquerda, fg='#FE7698', bg='#FFE282', anchor= NW,
             text='Bem vindo ao cadastro de Produtos da \n LOJINHA MOONLI',font=('futura', 16, 'bold'), padx=10, pady=20)
@@ -62,7 +61,7 @@ def cadastrar():
 
    mostrar()
 
-# Função do botão atualizar
+# Função do botão atualizar.
 
 global tree
 
@@ -132,7 +131,7 @@ def atualizar():
    except IndexError():
       messagebox.showerror('ERRO', 'Por favor, selecione um dado na tabela.')
     
-# Função do botão excluir
+# Função do botão excluir.
 
 def excluir():
 
@@ -157,7 +156,7 @@ def excluir():
 
       messagebox.showerror('ERRO', 'Por favor, selecione um dado na tabela.')
 
-# Função do botão limpar
+# Função do botão limpar.
 
 def limpar():
    
@@ -171,7 +170,7 @@ def limpar():
  
    mostrar()
 
-# Criando os Entry e seus Nomes
+# Criando as entradas de texto/dados e seus nomes.
 
 txtSku=Entry(frame_esquerda, width=20, borderwidth=5, relief=RIDGE, 
             fg='#000000', bg='#FFFFFF', font=('futura', 12, 'bold'))
@@ -179,7 +178,6 @@ txtSku.grid(row=1, column=2, columnspan=1, pady=1)
 lbSku=Label(frame_esquerda, fg='#FE7698', bg='#FFE282', 
             text='SKU do Produto:',font=('futura', 12, 'bold'), padx=20, pady=1)
 lbSku.grid(row=1, column=1)
-
 
 
 txtnome=Entry(frame_esquerda, width=20, borderwidth=5, relief=RIDGE, 
@@ -190,14 +188,12 @@ lblnome=Label(frame_esquerda, fg='#FE7698', bg='#FFE282',
 lblnome.grid(row=2, column=1)
 
 
-
 txtmarca=Entry(frame_esquerda, width=20, borderwidth=5, relief=RIDGE, 
             fg='#000000', bg='#FFFFFF',  font=('futura', 12, 'bold'))
 txtmarca.grid(row=3, column=2, columnspan=1, pady=1)
 lblmarca=Label(frame_esquerda, fg='#FE7698', bg='#FFE282', 
             text='Marca do Produto:',font=('futura', 12, 'bold'), padx=20, pady=1)
 lblmarca.grid(row=3, column=1)
-
 
 
 txtpreco=Entry(frame_esquerda, width=20, borderwidth=5, relief=RIDGE, 
@@ -208,14 +204,12 @@ lblpreco=Label(frame_esquerda, fg='#FE7698', bg='#FFE282',
 lblpreco.grid(row=4, column=1)
 
 
-
 txtprecodez=Entry(frame_esquerda, width=20, borderwidth=5, relief=RIDGE, 
                     fg='#000000', bg='#FFFFFF',  font=('futura', 12, 'bold'))
 txtprecodez.grid(row=5, column=2, columnspan=1, pady=2)
 lblprecodez=Label(frame_esquerda, fg='#FE7698', bg='#FFE282', 
                     text='Preço com +10%:',font=('futura', 12, 'bold'), padx=20, pady=10)
 lblprecodez.grid(row=5, column=1)
-
 
 
 txtquantidade=Entry(frame_esquerda, width=20, borderwidth=5, relief=RIDGE, 
@@ -226,7 +220,6 @@ lblquantidade=Label(frame_esquerda, fg='#FE7698', bg='#FFE282',
 lblquantidade.grid(row=6, column=1)
 
 
-
 txtgarantia=Entry(frame_esquerda, width=20, borderwidth=5, relief=RIDGE, 
                 fg='#000000', bg='#FFFFFF',  font=('futura', 12, 'bold'))
 txtgarantia.grid(row=7, column=2, columnspan=1, pady=2)
@@ -235,13 +228,13 @@ lblgarantia=Label(frame_esquerda, fg='#FE7698', bg='#FFE282',
 lblgarantia.grid(row=7, column=1)
 
 
-#Label criada apenas para dar espaço entre o entry e os buttons
+#Label criada apenas para dar espaço entre a entrada de dados e os botões
+
 lblfantasma=Label(frame_esquerda, bg='#FFE282', 
                     padx=70, pady=10)
 lblfantasma.grid(row=9, column=2)
 
-
-# Criando os Botões
+# Criando os Botões.
 
 btncadastrar=Button(frame_esquerda, command=cadastrar, fg='#FFE282', background='#B32AC4', relief=GROOVE, text='Cadastrar',
                                  font=('futura', 13, 'bold'), padx=70, pady=5)
@@ -262,7 +255,7 @@ btnlimpar=Button(frame_esquerda, command=limpar, fg='#FFE282', background='#B32A
                               font=('futura', 13, 'bold'), padx=77, pady=5)
 btnlimpar.grid(row=11, column=2)
 
-# Criando a tabela
+# Criando a tabela com o método tree.
 
 def mostrar():
     
@@ -270,12 +263,6 @@ def mostrar():
 
     lista = mostrar_dados()
 
-    '''tabela_cab = ["Sku", "Nome", "Marca", "Preço", "Preço com 10%", "Quantidade Disponível", "Garantia" ]
-
-    tree = ttk.Treeview(frame_direita, selectmode="extended", columns=("tabela_cab"), show="headings")
-
-    
-    '''
     tree = ttk.Treeview(frame_direita, selectmode="browse", columns=('c1','c2','c3','c4','c5','c6','c7'), show="headings")
 
     tree.column('c1', width=45, minwidth=50, stretch=NO)
@@ -299,11 +286,12 @@ def mostrar():
     tree.column('c7', width=60, minwidth=50, stretch=NO)
     tree.heading('#7', text='Garantia')
 
-
-    
     tree.grid(column=0, row=0, sticky='nsew')
 
-# Scroll vertical e horizontal
+    for item in lista:
+       tree.insert('', 'end', values=item) 
+
+# Scroll vertical e horizontal da tabela.
 
     vsb= ttk.Scrollbar(frame_direita, orient="vertical", command=tree.yview)
     hsb= ttk.Scrollbar(frame_direita, orient="horizontal", command=tree.xview)
@@ -312,26 +300,9 @@ def mostrar():
 
     vsb.grid(column=1, row=0, sticky='ns')
     hsb.grid(column=0, row=1, sticky='ew')
-    frame_direita.grid_rowconfigure(0, weight=12)
+    frame_direita.grid_rowconfigure(0, weight=12)   
 
-    for item in lista:
-       tree.insert('', 'end', values=item) 
-
-# Tamanhos da tabela
-
-''' hd=['nw','nw','nw','nw','nw','center','center']
-    h=[55, 100, 140, 10, 10, 50, 100]
-    n=1
-
-    for col in tabela_cab:
-       tree.heading(col, text=col.title(), anchor=CENTER)
-       tree.column(col, width=h[n], anchor=hd[n])
-       n+1
-       
-'''
-
-
-
+# finalização para que apareça tudo que colocamos e a janela não se feche
 
 mostrar()
 janela.mainloop()
